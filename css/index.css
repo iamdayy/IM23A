@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One&display=swap');
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.hidden {
+    transform: translateY(-1400px);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.wrapper-overlay {
+  position: absolute; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  visibility: visible;
+  /* 3D */
+  perspective: 1000px;
+  transition: transform 1s ease-out;
+  transition-delay: 5s;
+}
+
+.door {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  /* inner layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;  background-image: url('../assets//World\ Map.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+
+#left-door {
+  background-position: left;
+  top: 0;
+  left: 0;
+  /* transition */
+  transform-origin: left;
+  transform: rotateY(0deg);
+  transition: transform 5s ease-out, border 3s ease-in-out;
+}
+
+.door-left-open {
+    border: 5px solid rgb(45, 50, 60);
+    box-shadow: 3px 3px 3px 6px rgba(0, 0, 0, 0.4);
+    transform: rotateY(140deg) !important;
+}
+
+.door-right-open {
+    border: 5px solid rgb(45, 50, 60);
+    box-shadow: 3px 3px 3px 6px rgba(0, 0, 0, 0.4);
+    transform: rotateY(-140deg) !important;
+}
+
+#right-door {
+  background-position: right;
+  top: 0;
+  right: 0;
+  /* transition */
+  transform-origin: right;
+  transform: rotateY(0deg);
+  transition: transform 5s ease-out, border 3s ease-in-out;
+}
+
+.jumbotron {
+    z-index: 11;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 50%;
+    left: 50%;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 24px;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1px);
+    box-shadow: 3px 3px 3px 6px rgba(0, 0, 0, 0.4);
+    transform-origin: bottom;
+    transition: opacity 5s ease-in-out;
+}
+.jumbotron-leave {
+    opacity: 0;
+}
+.jumbotron button {
+    border: 0px;
+    background-color: blueviolet;
+    width: 14rem;
+    height: 4rem;
+    color: aliceblue;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 30rem;
+}
+.jumbotron button:hover {
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    outline: 2px solid blueviolet;
+    width: 14rem;
+    height: 4rem;
+    color: aliceblue;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 25px;
+}
+h1 {
+    margin-top: 1rem;
+    font-size: 4rem;
+    font-family: Concert One;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: .1rem;
+    -webkit-text-stroke-color: whitesmoke;
+    letter-spacing: 1rem;
+}
+
+.slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    overflow-x: scroll;
+    width: 100vw;
+    height: 500px;
+    cursor: grab;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.sliding {
+    cursor: grabbing;
+}
+.slider-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }

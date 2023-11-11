@@ -1,0 +1,239 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/parallax.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link
+    href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+    rel="stylesheet"
+  />
+ </head>
+ <body>
+    <!-- <header>
+       <div class="header">
+          <h1>Hello World</h1>
+         </div>
+      </header> -->
+      <div id="overlay" class="wrapper-overlay">
+         <div id="left-door" class="door">
+         </div>
+         <div id="right-door" class="door">
+         </div>
+         <div id="jumbotron" class="jumbotron">
+            <div>
+               <h1>Welcome To</h1>
+               <h1>IM23A</h1>
+            </div>
+            <button onclick="hiddenOverlay()">Click Here</button>
+         </div>
+      </div>
+      <div class="wrapper">
+         <div class="parallax__group hero-container">
+           <div class="parallax__layer sky"></div>
+           <div class="parallax__layer bushes"></div>
+           <div class="parallax__layer water"></div>
+           <div class="parallax__layer people1"></div>
+           <div class="parallax__layer people2"></div>
+           <div class="parallax__layer people3"></div>
+           <div class="parallax__layer hero-text">
+             <h2>Informatika.</h2>
+             <ul>
+               <!-- <li><a href="#">Passions</a></li>
+               <li><a href="#">Goals</a></li> -->
+               <li><a class="btn" onclick="hiddenOverlay()">Get Started Now</a></li>
+             </ul>
+             <div class="year-container">
+               <h1>2</h1>
+               <h1>0</h1>
+               <h1>2</h1>
+               <h1>3</h1>
+             </div>
+             <div class="social-container">
+               <a>Iamdayy</a>
+               <a href="https://github.com/iamdayy" target="_blank"
+                 ><i class="icon ion-logo-github"></i
+               ></a>
+               <a href="https://instagram.com/__iamdayy/" target="_blank"
+                 ><i class="icon ion-logo-instagram"></i
+               ></a>
+             </div>
+           </div>
+         </div>
+         <div class="parallax__group info-container">
+           <div class="slider-container">
+            <img src="./img/concert.jpg" alt="">
+            <img src="./img/concert.jpg" alt="">
+            <img src="./img/concert.jpg" alt="">
+            <img src="./img/concert.jpg" alt="">
+            <img src="./img/concert.jpg" alt="">
+            <img src="./img/concert.jpg" alt="">
+            <img src="./img/concert.jpg" alt="">
+           </div>
+         </div>
+         <div class="parallax__group info-container">
+            <div class="container">
+
+               <!-- Full-width images with number text -->
+               <div class="mySlides">
+                 <div class="numbertext">1 / 6</div>
+                   <img src="./img/concert.jpg" style="width:100%">
+               </div>
+             
+               <div class="mySlides">
+                 <div class="numbertext">2 / 6</div>
+                   <img src="./img/concert.jpg" style="width:100%">
+               </div>
+             
+               <div class="mySlides">
+                 <div class="numbertext">3 / 6</div>
+                   <img src="./img/concert.jpg" style="width:100%">
+               </div>
+             
+               <div class="mySlides">
+                 <div class="numbertext">4 / 6</div>
+                   <img src="./img/concert.jpg" style="width:100%">
+               </div>
+             
+               <div class="mySlides">
+                 <div class="numbertext">5 / 6</div>
+                   <img src="./img/concert.jpg" style="width:100%">
+               </div>
+             
+               <div class="mySlides">
+                 <div class="numbertext">6 / 6</div>
+                   <img src="./img/concert.jpg" style="width:100%">
+               </div>
+             
+               <!-- Next and previous buttons -->
+               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+               <a class="next" onclick="plusSlides(1)">&#10095;</a>
+             
+               <!-- Image text -->
+               <div class="caption-container">
+                 <p id="caption"></p>
+               </div>
+             
+               <!-- Thumbnail images -->
+               <div class="row">
+                 <div class="column">
+                   <img class="demo cursor" src="./img/concert.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                 </div>
+                 <div class="column">
+                   <img class="demo cursor" src="./img/concert.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                 </div>
+                 <div class="column">
+                   <img class="demo cursor" src="./img/concert.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                 </div>
+                 <div class="column">
+                   <img class="demo cursor" src="./img/concert.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                 </div>
+                 <div class="column">
+                   <img class="demo cursor" src="./img/concert.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                 </div>
+                 <div class="column">
+                   <img class="demo cursor" src="./img/concert.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                 </div>
+               </div>
+             </div>
+         </div>
+       </div>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+      AOS.init();
+      const overlay = document.getElementById('overlay');
+      const doorLeft = document.getElementById('left-door');
+      const doorRight = document.getElementById('right-door');
+      const jumbotron = document.getElementById('jumbotron');
+      function hiddenOverlay() {
+         doorLeft.classList.toggle('door-left-open')
+         doorRight.classList.toggle('door-right-open')
+         jumbotron.classList.toggle('jumbotron-leave');
+         overlay.classList.toggle('hidden');
+      }
+      const slider = document.querySelector(".slider-container");
+      const preventClick = (e) => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+      let isDown = false;
+      let isDragged = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", e => {
+        isDown = true;
+        slider.classList.add("sliding");
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.classList.remove("sliding");
+      });
+      slider.addEventListener("mouseup", (e) => {
+        isDown = false;
+        const elements = document.querySelectorAll("a");
+        if(isDragged){
+            for(let i = 0; i<elements.length; i++){
+                  elements[i].addEventListener("click", preventClick);
+            }
+        }
+        else{
+            for(let i = 0; i<elements.length; i++){
+                  elements[i].removeEventListener("click", preventClick);
+            }
+        }
+        slider.classList.remove("active");
+        isDragged =  false;
+      });
+      slider.addEventListener("mousemove", e => {
+        if (!isDown) return;
+        isDragged =  true;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+        console.log(walk);
+      });
+
+      let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+    </script>
+ </body>
+ </html>
